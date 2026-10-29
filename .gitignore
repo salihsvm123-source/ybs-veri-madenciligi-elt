@@ -1,0 +1,15 @@
+# Veritabanı ve büyük geçici dosyalar
+*.duckdb
+*.duckdb.wal
+target/
+dbt_packages/
+logs/
+
+# Python sanal ortam
+venv/
+.venv/
+__pycache__/
+
+# Sistem ve geçici dosyalar
+.DS_Store
+*.csv

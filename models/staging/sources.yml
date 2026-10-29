@@ -1,0 +1,12 @@
+version: 2
+
+sources:
+  - name: raw_data
+    schema: main
+    tables:
+      - name: raw_satislar
+        meta:
+          external_location: "read_csv_auto('C:/Users/salih/OneDrive/Masaüstü/ybs proje/data/perakende_satis.csv')"
+      - name: raw_hava_durumu
+        meta:
+          external_location: "read_csv_auto('C:/Users/salih/OneDrive/Masaüstü/ybs proje/data/hava_durumu.csv')"

@@ -18,7 +18,7 @@ Bu proje, perakende satış verileri ile harici açık kaynak meteoroloji verile
 
 Projede ham veri kaynağından mart katmanına kadar olan akış modüler staging ve mart yapılarıyla kurgulanmıştır.
 
-![dbt Lineage Graph](images/lineage.png)
+![dbt Lineage Graph](images/akis_semasi.png)
 
 1. **Source Katmanı:** `raw_satislar` ve `raw_hava_durumu`
 2. **Staging Katmanı:** 
@@ -46,15 +46,13 @@ Proje genelinde veri tutarlılığını garanti altına almak amacıyla **7 adet
 ### 1. Genel Finansal Özet
 Dönem boyunca incelenen toplam ciro hacmi **72 Milyon ₺** olarak kaydedilmiştir.
 
-![KPI Kartı](images/powerbi_kpi.png)
 
 ---
 
 ### 2. Hava Durumu ve Satış Kanalı Dağılımı
 Hava durumu kırılımında tüketici davranışlarının çevrim içi ve fiziksel mağaza tercihleri incelenmiştir.
 
-![Hava Durumu ve Kanal Analizi](images/powerbi_hava_kanal.png)
-
+![Hava Durumu ve Kanal Analizi](images/hava_ciro.png)
 - **Online Kanal Dominasyonu:** İncelenen tüm hava koşullarında dijital kanal fiziksel mağazanın belirgin şekilde önündedir.
 - **Evde Kalma Etkisi:** Ciro zirvesi **Kapalı** ve **Hafif Çisentili** günlerde gerçekleşmektedir (Kapalı havada online ciro 14M ₺'yi aşmaktadır).
 - **Ekstrem Hava Şartları:** Şiddetli yağmur ve kar yağışı durumunda talep hem fiziksel hem de teslimat/kargo endişeleri nedeniyle dijital kanalda belirgin şekilde yavaşlamaktadır.
@@ -64,36 +62,10 @@ Hava durumu kırılımında tüketici davranışlarının çevrim içi ve fiziks
 ### 3. Sıcaklık Değişkeninin Ürün Talebine Etkisi (Mevsimsellik)
 Sıcaklık artışının kışlık (**Kazak**) ve yazlık (**Tişört**) ürün talebi üzerindeki etkisi analiz edilmiştir.
 
-![Kazak vs Tişört Sıcaklık Analizi](images/powerbi_kazak_tisort.png)
-
+![Kazak vs Tişört Sıcaklık Analizi](images/sicaklik_urun.png)
 - **0°C – 15°C:** Kazak satışları 0°C bandında zirve yapmakta ve soğuk/serin havalarda Tişört satışlarının belirgin biçimde üzerinde seyretmektedir.
 - **20°C ve Üzeri:** 20°C eşiği aşıldığında Tişört talebi ivmelenerek Kazak satışlarını geride bırakmaktadır.
-
+![dbt Lineage Graph](images/akis_semasi.png)
+![Hava Durumu ve Ciro Analizi](images/hava_ciro.png)
+![Sıcaklık ve Ürün Analizi](images/sicaklik_urun.png)
 ---
-
-## 🛠️ Kurulum ve Çalıştırma
-
-Projeyi yerel ortamınızda ayağa kaldırmak için:
-
-1. **Repoyu Klonlayın:**
-   ```bash
-   git clone [https://github.com/KULLANICI_ADINIZ/REPO_ADINIZ.git](https://github.com/KULLANICI_ADINIZ/REPO_ADINIZ.git)
-   cd REPO_ADINIZ/nova_dbt
-   ```
-
-2. **Gerekli Paketleri Yükleyin:**
-   ```bash
-   pip install dbt-duckdb
-   ```
-
-3. **Modelleri Derleyin ve Testleri Çalıştırın:**
-   ```bash
-   dbt run
-   dbt test
-   ```
-
-4. **Lineage ve Dokümantasyonu Görüntüleyin:**
-   ```bash
-   dbt docs generate
-   dbt docs serve
-   ```

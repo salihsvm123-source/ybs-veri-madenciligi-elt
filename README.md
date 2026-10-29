@@ -26,7 +26,8 @@ Projede ham veri kaynağından mart katmanına kadar olan akış modüler stagin
    - `stg_hava_durumu.sql`: Günlük sıcaklık ve yağış özetlerinin normalize edilmesi.
 3. **Marts Katmanı:**
    - `fct_gunluk_satis_hava.sql`: Şehir ve tarih bazında birleştirilmiş, zaman boyutları (`hafta_sonu_mu`, `gun_adi`) ile zenginleştirilmiş nihai analitik fact tablosu.
-
+### Nihai Analitik Tablo (DBeaver Görünümü)
+![DBeaver Fact Tablosu](images\dbaever_tablo.png)
 ---
 
 ##  Veri Kalitesi ve Tutarlılık Testleri
@@ -65,7 +66,5 @@ Sıcaklık artışının kışlık (**Kazak**) ve yazlık (**Tişört**) ürün 
 ![Kazak vs Tişört Sıcaklık Analizi](images/sicaklik_urun.png)
 - **0°C – 15°C:** Kazak satışları 0°C bandında zirve yapmakta ve soğuk/serin havalarda Tişört satışlarının belirgin biçimde üzerinde seyretmektedir.
 - **20°C ve Üzeri:** 20°C eşiği aşıldığında Tişört talebi ivmelenerek Kazak satışlarını geride bırakmaktadır.
-![dbt Lineage Graph](images/akis_semasi.png)
-![Hava Durumu ve Ciro Analizi](images/hava_ciro.png)
-![Sıcaklık ve Ürün Analizi](images/sicaklik_urun.png)
+
 ---

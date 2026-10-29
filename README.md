@@ -27,7 +27,7 @@ Projede ham veri kaynağından mart katmanına kadar olan akış modüler stagin
 3. **Marts Katmanı:**
    - `fct_gunluk_satis_hava.sql`: Şehir ve tarih bazında birleştirilmiş, zaman boyutları (`hafta_sonu_mu`, `gun_adi`) ile zenginleştirilmiş nihai analitik fact tablosu.
 ### Nihai Analitik Tablo (DBeaver Görünümü)
-![DBeaver Fact Tablosu](images\dbaever_tablo.png)
+![DBeaver Analitik Tablo](images/dbaever_tablo.png)
 ---
 
 ##  Veri Kalitesi ve Tutarlılık Testleri

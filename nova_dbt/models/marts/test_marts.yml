@@ -1,0 +1,18 @@
+version: 2
+
+models:
+  - name: fct_gunluk_satis_hava
+    description: "Bağımsız test kontrolleri dosyası."
+    columns:
+      - name: siparis_id
+        tests:
+          - not_null
+          - unique
+      - name: toplam_ciro
+        tests:
+          - not_null
+      - name: satis_kanali
+        tests:
+          - accepted_values:
+              arguments:
+                values: ['Online', 'Mağaza']
